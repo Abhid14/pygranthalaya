@@ -123,3 +123,5 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 D:\A cs\pygranthalaya>
 
 Done
+
+git config --global --edit
