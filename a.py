@@ -17,17 +17,13 @@ def main():
         print("Please say something")
 
         audio = r.listen(source)
-
         print("Recognizing Now .... ")
 
 
         # recognize speech using google
 
         try:
-            print("You have said \n" + r.recognize_google(audio))
-            print("Audio Recorded Successfully \n ")
-
-
+            engine.say("You have said \n" + r.recognize_google(audio))
         except Exception as e:
             print("Error :  " + str(e))
 while True:
