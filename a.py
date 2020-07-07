@@ -28,7 +28,7 @@ def main():
 
         audio = r.listen(source)
         print("Recognizing Now .... ")
-
+        mixer.music.play()
 
         # recognize speech using google
 
