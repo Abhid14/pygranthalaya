@@ -9,7 +9,7 @@ def meetingInit():
     ComputerS = '571920506'
     Physics = '576548320'
     Chem = '1568431990'
-    Maths = 'https://meetingsapac32.webex.com/meetingsapac32/j.php?MTID=m0ca0a7be239639ab34d7b1a6482456b3'
+    Maths = 'https://meetingsapac31.webex.com/join/pr1568459044'
     PhysicsT = '402 309 8011'
     ChemT = '967 542 3876'
     MathsT = '925 102 4787'
