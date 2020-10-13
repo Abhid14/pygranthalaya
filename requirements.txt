@@ -1,0 +1,2 @@
+Eel==0.12.4
+PyGetWindow==0.0.8
