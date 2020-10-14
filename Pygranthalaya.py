@@ -3,9 +3,11 @@ import eel
 import pygetwindow as pw
 @eel.expose
 def sendloginPage():
-    dbWorker.giveuserPage()@eel.expose
+    dbWorker.giveuserPage()
+@eel.expose
 def submituserPassword(passkey,login_stat):
-    dbWorker.authenticateUser(passkey,login_stat)@eel.expose
+    dbWorker.authenticateUser(passkey,login_stat)
+@eel.expose
 def minWindow():
     pyWindow = pw.getWindowsWithTitle('Pygranthalaya')[0]
     pyWindow.minimize()
