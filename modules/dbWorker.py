@@ -167,46 +167,51 @@ def issueTitle(UID, ACCNO):
         vM = libcur.fetchall()
         if len(vT) == 1:
             if len(vM) == 1:
-                try:
-                    libcur.execute(
-                        "SELECT * FROM library where ACCNO=?", (ACCNO,))
-                    rLD = libcur.fetchall()[0]
-                    libcur.execute(
-                        "SELECT * FROM members where UID=?", (UID,))
-                    rMD = libcur.fetchall()[0]
-                    cir_dataT = (rMD[0], rLD[0], rLD[1], rMD[3], rMD[2])
-                    libcur.execute(
-                        "INSERT INTO circulation VALUES(?, ?, ?, ?, ?);", cir_dataT)
-                    libcur.execute(
-                        "UPDATE library set ISSUED = 'YES' WHERE ACCNO=?;", (ACCNO,))
-                    libdb.commit()
-                    eel.queryReturnsTable(2)
-                    eel.fillReturneesHead()
-                    libcur.execute(
-                        "SELECT * FROM circulation ORDER by UID ASC;")
-                    lCD = libcur.fetchall()
-                    for rows in lCD:
-                        eel.fillReturneesBody(
-                            rows[0], rows[1], rows[2], rows[3], rows[4])
-                    eel.queryReturnsTable(1)
-                    eel.queryTitlesTable(2)
-                    eel.fillTitlesHead()
-                    libcur.execute(
-                        "SELECT * FROM library order by ACCNO ASC;")
-                    lLD = libcur.fetchall()
-                    for rows in lLD:
-                        eel.fillTitlesBody(
-                            rows[0], rows[6], rows[1], rows[2], rows[4], rows[-1], rows[3], rows[-3])
-                    eel.queryTitlesTable(1)
-                    eel.issueTitleSuccess()
-                except:
-                    eel.issueTitleError(4)
+                libcur.execute("SELECT UID FROM circulation Where UID=?;", (UID,))
+                mE = libcur.fetchall()
+                if mE == 0:
+                    try:
+                        libcur.execute(
+                            "SELECT * FROM library where ACCNO=?", (ACCNO,))
+                        rLD = libcur.fetchall()[0]
+                        libcur.execute(
+                            "SELECT * FROM members where UID=?", (UID,))
+                        rMD = libcur.fetchall()[0]
+                        cir_dataT = (rMD[0], rLD[0], rLD[1], rMD[3], rMD[2])
+                        libcur.execute(
+                            "INSERT INTO circulation VALUES(?, ?, ?, ?, ?);", cir_dataT)
+                        libcur.execute(
+                            "UPDATE library set ISSUED = 'YES' WHERE ACCNO=?;", (ACCNO,))
+                        libdb.commit()
+                        eel.queryReturnsTable(2)
+                        eel.fillReturneesHead()
+                        libcur.execute(
+                            "SELECT * FROM circulation ORDER by UID ASC;")
+                        lCD = libcur.fetchall()
+                        for rows in lCD:
+                            eel.fillReturneesBody(
+                                rows[0], rows[1], rows[2], rows[3], rows[4])
+                        eel.queryReturnsTable(1)
+                        eel.queryTitlesTable(2)
+                        eel.fillTitlesHead()
+                        libcur.execute(
+                            "SELECT * FROM library order by ACCNO ASC;")
+                        lLD = libcur.fetchall()
+                        for rows in lLD:
+                            eel.fillTitlesBody(
+                                rows[0], rows[6], rows[1], rows[2], rows[4], rows[-1], rows[3], rows[-3])
+                        eel.queryTitlesTable(1)
+                        eel.issueTitleSuccess()
+                    except:
+                        eel.issueTitleError(6)
+                else:
+                    eel.issueTitleError(5)
             else:
                 eel.issueTitleError(3)
         else:
             eel.issueTitleError(2)
     else:
-        eel.issueTitleError(5)
+        eel.issueTitleError(4)
 def submitTitle(ACCNO):
     try:
         libcur.execute(
