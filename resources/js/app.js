@@ -399,18 +399,20 @@ function submitadt() {
 }
 eel.expose(issueTitleError)
 function issueTitleError(iTErrNo) {
-  if (iTErrNo == 1) {
-    iTMsg = "Please enter the required values properly!"
-  }
-  if (iTErrNo == 3) {
-    iTMsg = "Error member not found. Please check the details!"
-  }
-  if (iTErrNo == 2) { iTMsg = "Error title not found. Please check the details!" }
-  if (iTErrNo == 4) {
-    iTMsg = "Database error from server couln't issue Title!"
-  }
-  if (iTErrNo == 5) {
-    iTMsg = "The title is already in Circulation! Cannot issue unitl returned!"
+  switch (iTErrNo) {
+    case 1: iTMsg = "Please enter the required values properly!"
+      break;
+    case 2: iTMsg = "Error Title not found. Please check the details!"
+      break;
+    case 3: iTMsg = "Error Member not found. Please check the details!"
+      break;
+    case 4: iTMsg = "The title is already in Circulation! Cannot issue unitl returned!"
+      break;
+    case 5: iTMsg = "The Member is already in Circulation! Cannot issue unitl returned!"
+      break;
+    case 6: iTMsg = "Database error from server couln't issue Title!"
+      break;
+    default: iTMsg = "Unknown error occured please check values!"
   }
   app.progressbar.hide()
   app.dialog.create({
