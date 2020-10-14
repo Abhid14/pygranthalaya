@@ -70,7 +70,7 @@ def restartApp():
     os.rename(r'{}\\resources\app.html'.format(os.getcwd()),
               r'{}\\resources\index.html'.format(os.getcwd()))
     eel.closeInstall()
-    os.startfile('Pygranthalaya.py')
+    os.startfile('Pygranthalaya.exe')
     exit()
 def start():
     eel.init('resources')
