@@ -177,7 +177,7 @@ def issueTitle(UID, ACCNO):
                         libcur.execute(
                             "SELECT * FROM members where UID=?", (UID,))
                         rMD = libcur.fetchall()[0]
-                        cir_dataT = (rMD[0], rLD[0], rLD[1], rMD[3], rMD[2])
+                        cir_dataT = (rMD[0], rLD[0], rLD[1], rMD[1], rMD[2])
                         libcur.execute(
                             "INSERT INTO circulation VALUES(?, ?, ?, ?, ?);", cir_dataT)
                         libcur.execute(
