@@ -315,11 +315,9 @@ def optdb():
     libdb.commit()
     eel.operationSuccessMsg(1)
 def bkpdb():
+    bkpPath = r"{}\\resources\appdata\backup.db".format(os.getcwd())
     if os.path.exists(r'{}\\resources\appdata\backup.db'.format(os.getcwd())):
-        bkpPath = r"{}\\resources\appdata\backup.db".format(os.getcwd())
-        os.remove(bkpPath)
-    else:
-        bkpPath = r"{}\\resources\appdata\backup.db".format(os.getcwd())
-        libcur.execute("VACUUM main INTO ?;", (bkpPath,))
-        libdb.commit()
-        eel.operationSuccessMsg(2)
+        os.remove(bkpPath)    
+    libcur.execute("VACUUM main INTO ?;", (bkpPath,))
+    libdb.commit()
+    eel.operationSuccessMsg(2)
