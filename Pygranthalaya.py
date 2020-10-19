@@ -109,7 +109,7 @@ def restartApp():
     os.rename('{}\\\\resources\\app.html'.format(os.getcwd()),
               '{}\\\\resources\\index.html'.format(os.getcwd()))
     eel.closeInstall()
-    os.startfile('Pygranthalaya.py')
+    os.startfile('Pygranthalaya.exe')
     exit()
 
 
@@ -140,21 +140,17 @@ def setup():
 
 if os.path.exists('{}\\\\resources\\appdata\\about.json'.format(os.getcwd())):
     if os.path.exists('{}\\\\resources\\appdata\\library.db'.format(os.getcwd())):
+        if os.path.exists('{}\\\\resources\\app.html'.format(os.getcwd())):
+            os.rename('{}\\\\resources\\app.html'.format(
+            os.getcwd()), '{}\\\\resources\\index.html'.format(os.getcwd()))
+            from modules import dbWorker
+            start()
         if os.path.exists('{}\\\\resources\\index.html'.format(os.getcwd())):
             from modules import dbWorker
             start()
         else:
-            try:
-                if os.path.exists('{}\\\\resources\\app.html'.format(os.getcwd())):
-                    os.rename('{}\\\\resources\\app.html'.format(
-                        os.getcwd()), '{}\\\\resources\\index.html'.format(os.getcwd()))
-                    from modules import dbWorker
-                    print("starting")
-                    start()
-            except:
-                from tkinter import messagebox
-                messagebox.showerror(title='Critical Error!',
-                                     message='App cannot start files corrupted or missing. Error triggered by frontend not found!')
+            from tkinter import messagebox
+            messagebox.showerror(title='Critical Error!',message='App cannot start files corrupted or missing. Error triggered by frontend not found!')
 
     else:
         if os.path.exists('{}\\\\resources\\index.html'.format(os.getcwd())):
