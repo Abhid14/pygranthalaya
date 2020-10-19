@@ -143,8 +143,8 @@ if os.path.exists('{}\\\\resources\\appdata\\about.json'.format(os.getcwd())):
         if os.path.exists('{}\\\\resources\\app.html'.format(os.getcwd())):
             os.rename('{}\\\\resources\\app.html'.format(
             os.getcwd()), '{}\\\\resources\\index.html'.format(os.getcwd()))
-            from modules import dbWorker
-            start()
+            os.rename('{}\\\\resources\\index.html'.format(
+            os.getcwd()), '{}\\\\resources\\install.html'.format(os.getcwd()))
         if os.path.exists('{}\\\\resources\\index.html'.format(os.getcwd())):
             from modules import dbWorker
             start()
