@@ -70,6 +70,11 @@ def bkpdb():
 
 
 @eel.expose
+def convExcel():
+    dbWorker.convtoExcel()
+
+
+@eel.expose
 def installUP():
     import shutil
     from tkinter import filedialog
@@ -118,7 +123,7 @@ def setup():
     if os.path.exists(r'{}\\resources\install.html'.format(os.getcwd())):
         if os.path.exists(r'{}\\resources\index.html'.format(os.getcwd())):
             os.rename(r'{}\\resources\index.html'.format(os.getcwd()),
-                          r'{}\\resources\app.html'.format(os.getcwd()))
+                      r'{}\\resources\app.html'.format(os.getcwd()))
         os.rename(r'{}\\resources\install.html'.format(os.getcwd()),
                   r'{}\\resources\index.html'.format(os.getcwd()))
     else:
@@ -127,7 +132,7 @@ def setup():
         else:
             from tkinter import messagebox
             messagebox.showerror(
-                    title="Critical Error!", message="App cannot install files corrupted or missing. Error triggered by frontend not found!")
+                title="Critical Error!", message="App cannot install files corrupted or missing. Error triggered by frontend not found!")
     eel.init('resources')
     eel.start('index.html', mode='custom', port=12114,
               cmdline_args=['pga.exe', '.'])
@@ -144,6 +149,7 @@ if os.path.exists('{}\\\\resources\\appdata\\about.json'.format(os.getcwd())):
                     os.rename('{}\\\\resources\\app.html'.format(
                         os.getcwd()), '{}\\\\resources\\index.html'.format(os.getcwd()))
                     from modules import dbWorker
+                    print("starting")
                     start()
             except:
                 from tkinter import messagebox
