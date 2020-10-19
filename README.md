@@ -1,4 +1,4 @@
-# pygranthalaya
+# Pygranthalaya
 Pygranthalaya 
 
   Open-source Library management software.
