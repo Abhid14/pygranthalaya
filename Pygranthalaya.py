@@ -109,14 +109,14 @@ def restartApp():
     os.rename('{}\\\\resources\\app.html'.format(os.getcwd()),
               '{}\\\\resources\\index.html'.format(os.getcwd()))
     eel.closeInstall()
-    os.startfile('Pygranthalaya.exe')
+    os.startfile('Pygranthalaya.py')
     exit()
 
 
 def start():
     eel.init('resources')
     eel.start('index.html', mode='custom', port=12114, cmdline_args=[
-        'pga.exe', '.'])
+        './frontend/pga.exe', '.'])
 
 
 def setup():
@@ -135,7 +135,7 @@ def setup():
                 title="Critical Error!", message="App cannot install files corrupted or missing. Error triggered by frontend not found!")
     eel.init('resources')
     eel.start('index.html', mode='custom', port=12114,
-              cmdline_args=['pga.exe', '.'])
+              cmdline_args=['./frontend/pga.exe', '.'])
 
 
 if os.path.exists('{}\\\\resources\\appdata\\about.json'.format(os.getcwd())):
