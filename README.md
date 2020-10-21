@@ -2,7 +2,7 @@
 Pygranthalaya 
 
   Open-source Library management software.
-  Built on python (3.8.5), Electron-js, and many pip packages see requirements.txt in master.
+  Built on python, Electron-js, and many pip packages see requirements.txt in master.
   To install app as a client download the latest release v1.0.5-beta then binary file 
   Unzip/unpack the file in your equired directory then run Pygranthalaya.exe
   Follow all the steps and application will be ready for use.
