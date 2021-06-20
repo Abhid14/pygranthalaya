@@ -13,7 +13,7 @@ Developers
 
   Download and unpack v1.0.0 python-version in a proper folder
   Ensure python version 3.8 is installed if not packages may fail to run python 3.8.5 is recommended
-  Oen a terminal in the directory conataining Pygranthalaya.py
+  Open a terminal in the directory conataining Pygranthalaya.py
   In the terminal execute pip install -r requirements.txt to install the required dependencies.
   Continue with running Pygranthalaya.py to start application
 
