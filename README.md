@@ -2,7 +2,7 @@
 
 ![pygranthalya](https://user-images.githubusercontent.com/34400585/164593247-cdff656e-2b31-4a5b-b473-6d130c0cd500.png)
 
-  Open-source Library management software.
+  An open-source Library management software.
   Built on python, Electron-js, and many pip packages see requirements.txt in master.
   To install app as a client download the latest release Pygranthalaya-v1.0.0-setup.exe, 
   avoid warnings shown by your browser or antivirus then execute the downloaded
