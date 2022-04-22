@@ -1,5 +1,4 @@
 # Pygranthalaya
-Pygranthalaya 
 
 ![pygranthalya](https://user-images.githubusercontent.com/34400585/164593247-cdff656e-2b31-4a5b-b473-6d130c0cd500.png)
 
