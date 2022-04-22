@@ -23,4 +23,4 @@ For any queries or support contact abhid14@outlook.com
 Screenshots
 
 ![image](https://user-images.githubusercontent.com/34400585/164593081-7b8613a1-94b2-4deb-b4cf-a278d2ff9c00.png)
-
+![image](https://user-images.githubusercontent.com/34400585/164593908-c6b93ee0-b56e-4afb-9f98-2bb7df24e551.png)
