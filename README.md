@@ -20,7 +20,12 @@ Developers
 
 For any queries or support contact abhid14@outlook.com
 
+Quick Walkthrough
+https://www.youtube.com/watch?v=6etHmAe8E3M
 Screenshots
 
 ![image](https://user-images.githubusercontent.com/34400585/164593081-7b8613a1-94b2-4deb-b4cf-a278d2ff9c00.png)
 ![image](https://user-images.githubusercontent.com/34400585/164593908-c6b93ee0-b56e-4afb-9f98-2bb7df24e551.png)
+![image](https://user-images.githubusercontent.com/34400585/164594363-0d6b23b4-8b22-42d2-93dd-e10edc854a62.png)
+![image](https://user-images.githubusercontent.com/34400585/164594921-40b5ad06-66f2-484a-9646-c1c3c3f07a5d.png)
+
